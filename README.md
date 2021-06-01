@@ -1,4 +1,4 @@
-Turuangal is a simple containerized web crawler behind a Tor proxy.
+Turangal is a simple containerized web crawler behind a Tor proxy.
 
 # Usage
 
