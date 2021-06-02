@@ -1,5 +1,7 @@
 #!/bin/bash
 
+user_agent="Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0"
+
 function print_hosts() {
     pattern="^(?:http|https):\/\/(?:[a-z0-9]+\.)*\K([a-z0-9]+\.[a-z0-9]+)"
     hosts=()
@@ -47,9 +49,10 @@ else
     torsocks \
     wget \
     --execute robots=off \
+    --user-agent="$user_agent" \
     --warc-file="$filename" \
     --no-warc-keep-log \
-    --timeout=5 \
+    --read-timeout=5 \
     --tries=10 \
     --adjust-extension \
     --html-extension \
